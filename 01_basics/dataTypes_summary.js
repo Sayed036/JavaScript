@@ -41,3 +41,31 @@ console.log("id return_type: ",typeof id);   // symbol
 console.log("BigNumber return_type: ",typeof BigNumber);  // bigint
 console.log("Heros return_type: ",typeof Heros);  // object
 console.log("myFunction return_type: ",typeof myFunction);  // function
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive);   Heap (Non-premitive);
+
+let myYtName = "HackWithSayed"; // Stack example (copy value)
+let Another_YtName = myYtName;
+myYtName = "Hossain_Hacking";
+
+console.log(myYtName); // O/P -> Hossain_Hacking
+console.log(Another_YtName);  // O/P -> HackWithSayed
+
+
+let userOne = { // Heap example (Original reference)
+    email: "soulf032@gmail.com",
+    upi: "soul@ybl",
+
+}
+
+let userTwo = userOne;
+userTwo.email = "user@google.com";
+
+console.log(userOne.email);
+console.log(userTwo.email); // both O/P are user@google.com
+
+

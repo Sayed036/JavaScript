@@ -35,9 +35,9 @@ const myFunction = function() // Function return type is Function
     
 } 
 
-console.log(typeof score);  // number
-console.log(typeof outsideTemp);  // object
-console.log(typeof id);   // symbol
-console.log(typeof BigNumber);  // bigint
-console.log(typeof Heros);  // object
-console.log(typeof myFunction);  // function
+console.log("score return_type : ",typeof score);  // number
+console.log("outsideTemp return_type: ",typeof outsideTemp);  // object
+console.log("id return_type: ",typeof id);   // symbol
+console.log("BigNumber return_type: ",typeof BigNumber);  // bigint
+console.log("Heros return_type: ",typeof Heros);  // object
+console.log("myFunction return_type: ",typeof myFunction);  // function

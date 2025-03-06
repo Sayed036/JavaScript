@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    Value	State	Description
+
+    0	UNSENT	Client has been created. open() not called yet. <br>
+    1	OPENED	open() has been called.  <br> 
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available. <br>
+    3	LOADING	Downloading; responseText holds partial data. <br>
+    4	DONE	The operation is complete. <br>
+</body>
+
+<script>
+    const reqUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', reqUrl)   // open() -> it takes two parameter (1). method: string   (2). URL:string | URL
+    // this open() method -> send the request
+
+    
+    // open ko call krne ke liye hame....send() method ka use krna hoga, wrna open() call nahi hoga!
+    xhr.send()
+
+    xhr.onreadystatechange = function(){ //onreadystatechange -> it moniter the every(all) state.
+        console.log(xhr.readyState); // readyState -> it shows the number, with the help of number, we can identify the state.
+        
+        if (xhr.readyState === 4) {
+            console.log("Work completed");
+
+            // this.response -> URL return the data in String format most of the times.
+
+            //JSON -> it is a Object.
+            const Hitesh_Data = JSON.parse(this.responseText) // parse-> it convert the String to JSON.
+            console.log("JSON Type -> ",Hitesh_Data); 
+            console.log("Followers of Hitesh ->", Hitesh_Data.followers);
+        }
+    }
+
+</script>
+
+</html>
